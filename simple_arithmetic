@@ -1,0 +1,44 @@
+def add(n, s):
+    return n + s
+
+def subtract(n, s):
+    return n - s
+
+def multiply(n, s):
+    return n * s
+
+def divide(n, s):
+    if s == 0:
+        return "Error: division by zero"
+    return n / s
+
+def calculator():
+    print("Select any option:")
+    print("1. Addition")
+    print("2. Subtraction")
+    print("3. Multiplication")
+    print("4. Division")
+    
+    choice = input("Enter your choice (1/2/3/4): ")
+    
+    try:
+        a = float(input("Enter the first number: "))
+        b = float(input("Enter the second number: "))
+    except ValueError:
+        print("Invalid input. Please enter valid numeric values.")
+        return
+    
+    if choice == '1':
+        print("Result: ", add(a, b))
+    elif choice == '2':
+        print("Result: ", subtract(a, b))
+    elif choice == '3':
+        print("Result: ", multiply(a, b))
+    elif choice == '4':
+        result = divide(a, b)
+        print("Result: ", result)
+        if isinstance(result, str):
+            print(result)
+    else:
+        print("Invalid input. Please choose a valid option.")
+calculator()
